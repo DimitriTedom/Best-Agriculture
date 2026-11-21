@@ -41,3 +41,7 @@ yarn-error.log*
 next-env.d.ts
 
 /lib/generated/prisma
+
+# Private source documents (do not commit to Git)
+FICHE BEST AGRICULTURE.pdf
+entete best.pdf
