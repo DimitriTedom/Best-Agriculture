@@ -102,10 +102,6 @@ export function SiteFooter() {
                 <span className="block text-forest-300/70">N° Contribuable</span>
                 <span className="font-mono font-semibold text-white">{COMPANY_INFO.taxId}</span>
               </div>
-              <div>
-                <span className="block text-forest-300/70">N° RCCM</span>
-                <span className="font-mono font-semibold text-white">{COMPANY_INFO.rccm}</span>
-              </div>
             </div>
           </div>
         </div>
@@ -114,7 +110,7 @@ export function SiteFooter() {
           <p>
             © {new Date().getFullYear()} {COMPANY_INFO.name}. {SITE_COPY.footer.rights[locale]}
           </p>
-          <p>Dschang Foreke & Santchou • Région de l&apos;Ouest, Cameroun</p>
+          <p>Foreke Dschang, Santchou • Région de l&apos;Ouest, Cameroun</p>
         </div>
       </div>
     </footer>

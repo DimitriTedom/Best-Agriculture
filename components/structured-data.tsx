@@ -21,15 +21,10 @@ export function StructuredData() {
         name: "N° Contribuable",
         value: COMPANY_INFO.taxId,
       },
-      {
-        "@type": "PropertyValue",
-        name: "N° RCCM",
-        value: COMPANY_INFO.rccm,
-      },
     ],
     address: {
       "@type": "PostalAddress",
-      streetAddress: "Dschang Foreke",
+      streetAddress: "Foreke Dschang",
       addressLocality: "Dschang",
       addressRegion: "Région de l'Ouest",
       addressCountry: "CM",

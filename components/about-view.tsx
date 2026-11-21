@@ -185,10 +185,6 @@ export function AboutView() {
                 <dd className="font-mono font-semibold text-harvest-300">{COMPANY_INFO.taxId}</dd>
               </div>
               <div className="flex flex-col justify-between gap-1 border-b border-forest-800 pb-3 sm:flex-row">
-                <dt className="text-forest-300">N° RCCM</dt>
-                <dd className="font-mono font-semibold text-harvest-300">{COMPANY_INFO.rccm}</dd>
-              </div>
-              <div className="flex flex-col justify-between gap-1 border-b border-forest-800 pb-3 sm:flex-row">
                 <dt className="text-forest-300">
                   {locale === "fr" ? "Objet social" : "Scope"}
                 </dt>

@@ -32,8 +32,8 @@ export function SiteHeader() {
           <div className="flex items-center gap-4">
             <span className="font-medium text-harvest-300">
               {locale === "fr"
-                ? "Siège : Dschang Foreke • Site de production : Santchou (Menoua)"
-                : "HQ: Dschang Foreke • Production site: Santchou (Menoua)"}
+                ? "Foreke Dschang, Santchou (Menoua) • Entreprise Agricole"
+                : "Foreke Dschang, Santchou (Menoua) • Agricultural Enterprise"}
             </span>
           </div>
           <div className="flex items-center gap-5">

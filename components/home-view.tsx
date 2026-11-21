@@ -144,8 +144,10 @@ export function HomeView() {
                   </a>
                 </div>
                 <div className="flex items-center justify-between">
-                  <span className="text-forest-300">RCCM</span>
-                  <span className="font-mono text-xs text-harvest-200">{COMPANY_INFO.rccm}</span>
+                  <span className="text-forest-300">
+                    {locale === "fr" ? "N° Contribuable" : "Tax ID"}
+                  </span>
+                  <span className="font-mono text-xs text-harvest-200">{COMPANY_INFO.taxId}</span>
                 </div>
               </div>
             </div>

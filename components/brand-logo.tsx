@@ -60,7 +60,7 @@ export function BrandLogo({
               inverted ? "text-forest-300/80" : "text-muted-foreground"
             )}
           >
-            Dschang • Cameroun
+            Dschang - Santchou • Cameroun
           </span>
         </span>
       )}
