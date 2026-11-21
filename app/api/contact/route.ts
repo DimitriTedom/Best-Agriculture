@@ -1,5 +1,8 @@
 import { NextResponse } from "next/server";
 import { z } from "zod";
+import { isSmtpConfigured, sendContactInquiryEmail } from "@/lib/mailer";
+
+export const runtime = "nodejs";
 
 const contactSchema = z.object({
   fullName: z.string().trim().min(2).max(120),
@@ -25,16 +28,31 @@ export async function POST(request: Request) {
       );
     }
 
-    // Log inquiry cleanly server-side (ready to hook into email/DB later)
-    console.info("[Best Agriculture Contact Inquiry]", {
-      timestamp: new Date().toISOString(),
-      fullName: parsed.data.fullName,
-      phone: parsed.data.phone,
-      subject: parsed.data.subject,
-    });
+    if (isSmtpConfigured()) {
+      await sendContactInquiryEmail({
+        fullName: parsed.data.fullName,
+        phone: parsed.data.phone,
+        email: parsed.data.email || undefined,
+        subject: parsed.data.subject,
+        message: parsed.data.message,
+      });
+    } else {
+      console.warn(
+        "[Best Agriculture Contact] SMTP_USER/SMTP_PASS not set — logged inquiry without sending email.",
+        {
+          fullName: parsed.data.fullName,
+          phone: parsed.data.phone,
+          subject: parsed.data.subject,
+        }
+      );
+    }
 
     return NextResponse.json({ ok: true });
-  } catch {
-    return NextResponse.json({ ok: false, error: "Bad request" }, { status: 400 });
+  } catch (error) {
+    console.error("[Best Agriculture Contact Error]", error);
+    return NextResponse.json(
+      { ok: false, error: "Unable to send inquiry right now." },
+      { status: 500 }
+    );
   }
 }
