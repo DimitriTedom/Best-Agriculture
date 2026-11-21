@@ -24,6 +24,7 @@ import { Marquee } from "@/components/ui/marquee";
 import NumberTicker from "@/components/ui/number-ticker";
 import {
   COMPANY_INFO,
+  FIELD_GALLERY,
   PRODUCTS_DATA,
   SERVICES_DATA,
   SITE_COPY,
@@ -396,6 +397,68 @@ export function HomeView() {
                 </Link>
               </Button>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* FIELD GALLERY — REAL ENTERPRISE PHOTOS */}
+      <section className="border-t border-border bg-secondary/35 py-20">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="flex flex-col justify-between gap-6 md:flex-row md:items-end">
+            <div className="max-w-2xl space-y-3">
+              <p className="text-xs font-bold uppercase tracking-[0.2em] text-forest-700">
+                {locale === "fr" ? "Sur le Terrain" : "In the Field"}
+              </p>
+              <h2 className="font-serif text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
+                {locale === "fr"
+                  ? "Nos équipes et nos interventions en images"
+                  : "Our teams and real field operations"}
+              </h2>
+              <p className="text-base leading-relaxed text-muted-foreground">
+                {locale === "fr"
+                  ? "Du diagnostic phytosanitaire en cacaoyère au suivi des parcelles de maïs et des pépinières : découvrez Best Agriculture en action."
+                  : "From phytosanitary diagnostics in cocoa groves to maize field monitoring and nursery grafting: see Best Agriculture in action."}
+              </p>
+            </div>
+            <Button
+              asChild
+              variant="outline"
+              className="w-fit rounded-full border-forest-800/30 text-forest-900 hover:bg-forest-50"
+            >
+              <Link href="/a-propos">
+                {locale === "fr" ? "Rencontrer l'équipe" : "Meet the team"}
+                <ArrowRight className="ml-2 h-4 w-4" />
+              </Link>
+            </Button>
+          </div>
+
+          <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+            {FIELD_GALLERY.slice(0, 6).map((item, idx) => (
+              <BlurFade key={item.id} delay={idx * 0.05}>
+                <figure className="group overflow-hidden rounded-3xl border border-border bg-card shadow-sm transition hover:shadow-lg">
+                  <div className="relative aspect-[4/3] w-full overflow-hidden bg-forest-100">
+                    <Image
+                      src={item.image}
+                      alt={item.title[locale]}
+                      fill
+                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                      className="object-cover object-center transition-transform duration-500 group-hover:scale-105"
+                    />
+                    <span className="absolute left-3.5 top-3.5 rounded-full bg-forest-950/80 px-3 py-1 text-[11px] font-semibold uppercase tracking-wider text-harvest-300 backdrop-blur-sm">
+                      {item.tag[locale]}
+                    </span>
+                  </div>
+                  <figcaption className="p-5">
+                    <h3 className="font-serif text-lg font-bold text-foreground">
+                      {item.title[locale]}
+                    </h3>
+                    <p className="mt-1.5 text-sm leading-relaxed text-muted-foreground">
+                      {item.caption[locale]}
+                    </p>
+                  </figcaption>
+                </figure>
+              </BlurFade>
+            ))}
           </div>
         </div>
       </section>

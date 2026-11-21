@@ -37,7 +37,7 @@ export const SERVICES_DATA: ServiceItem[] = [
     id: "productions",
     slug: "productions-agricoles",
     icon: "sprout",
-    image: "/images/horticulture-harvest.jpg",
+    image: "/images/maize-plantation-field.jpg",
     title: {
       fr: "Productions Agricoles & Maraîchères",
       en: "Crop & Market-Garden Production",
@@ -67,7 +67,7 @@ export const SERVICES_DATA: ServiceItem[] = [
     id: "conseils",
     slug: "conseils-agronomiques",
     icon: "compass",
-    image: "/images/agronomy-advisory.jpg",
+    image: "/images/soil-preparation-inspection.jpg",
     title: {
       fr: "Conseils Agronomiques & Diagnostics",
       en: "Agronomic Advisory & Field Diagnostics",
@@ -97,7 +97,7 @@ export const SERVICES_DATA: ServiceItem[] = [
     id: "accompagnement",
     slug: "accompagnement-suivi-producteurs",
     icon: "users",
-    image: "/images/seedlings-nursery.jpg",
+    image: "/images/cocoa-producers-advisory.jpg",
     title: {
       fr: "Accompagnement & Suivi des Producteurs",
       en: "Farmer Coaching & Field Monitoring",
@@ -187,7 +187,7 @@ export const SERVICES_DATA: ServiceItem[] = [
     id: "horticulture-sylviculture",
     slug: "horticulture-sylviculture",
     icon: "trees",
-    image: "/images/seedlings-nursery.jpg",
+    image: "/images/nursery-grafting-seedlings.jpg",
     title: {
       fr: "Horticulture & Sylviculture",
       en: "Horticulture & Silviculture",
@@ -563,3 +563,105 @@ export const SITE_COPY = {
     },
   },
 };
+
+export type FieldGalleryItem = {
+  id: string;
+  image: string;
+  tag: Record<Locale, string>;
+  title: Record<Locale, string>;
+  caption: Record<Locale, string>;
+};
+
+export const FIELD_GALLERY: FieldGalleryItem[] = [
+  {
+    id: "brigade",
+    image: "/images/team-field-brigade.jpg",
+    tag: { fr: "Équipe Terrain", en: "Field Brigade" },
+    title: {
+      fr: "Notre brigade d'intervention agricole",
+      en: "Our agricultural field intervention team",
+    },
+    caption: {
+      fr: "Techniciens et ouvriers équipés pour l'implantation, l'entretien et le suivi des exploitations.",
+      en: "Technicians and field workers equipped for farm setup, maintenance, and monitoring.",
+    },
+  },
+  {
+    id: "maize",
+    image: "/images/maize-plantation-field.jpg",
+    tag: { fr: "Productions", en: "Production" },
+    title: {
+      fr: "Suivi de parcelle de maïs en pleine levée",
+      en: "Monitoring a thriving maize plantation",
+    },
+    caption: {
+      fr: "Contrôle de la densité de semis et de la vigueur végétative sur grande superficie.",
+      en: "Checking planting density and crop vigor across large-scale plots.",
+    },
+  },
+  {
+    id: "cocoa-team",
+    image: "/images/cocoa-producers-advisory.jpg",
+    tag: { fr: "Accompagnement", en: "Farmer Coaching" },
+    title: {
+      fr: "Encadrement des producteurs en cacaoyère",
+      en: "Coaching cocoa growers in the plantation",
+    },
+    caption: {
+      fr: "Visite technique conjointe avec les exploitants pour améliorer la qualité et le rendement des cabosses.",
+      en: "Joint technical visit with growers to improve pod health and harvest yields.",
+    },
+  },
+  {
+    id: "diagnosis",
+    image: "/images/cocoa-pod-phytosanitary-diagnosis.jpg",
+    tag: { fr: "Diagnostic Phytosanitaire", en: "Phytosanitary Diagnosis" },
+    title: {
+      fr: "Détection précoce de la pourriture brune",
+      en: "Early detection of cocoa black pod disease",
+    },
+    caption: {
+      fr: "Identification sur parcelle des attaques fongiques afin de prescrire le traitement homologué adapté.",
+      en: "On-field identification of fungal attacks to prescribe the right approved treatment.",
+    },
+  },
+  {
+    id: "soil",
+    image: "/images/soil-preparation-inspection.jpg",
+    tag: { fr: "Conseil Agronomique", en: "Agronomic Advisory" },
+    title: {
+      fr: "Inspection après labour et préparation du sol",
+      en: "Post-tillage & soil preparation inspection",
+    },
+    caption: {
+      fr: "Évaluation de la structure du sol et planification de la fumure avant mise en terre.",
+      en: "Assessing soil structure and fertilization schedules prior to planting.",
+    },
+  },
+  {
+    id: "nursery",
+    image: "/images/nursery-grafting-seedlings.jpg",
+    tag: { fr: "Pépinière & Horticulture", en: "Nursery & Horticulture" },
+    title: {
+      fr: "Greffage et contrôle des plants en pépinière",
+      en: "Grafting & quality control of nursery saplings",
+    },
+    caption: {
+      fr: "Production de plants fruitiers et sylvicoles vigoureux prêts pour la transplantation.",
+      en: "Producing vigorous fruit and forestry saplings ready for field transplanting.",
+    },
+  },
+  {
+    id: "soil-work",
+    image: "/images/team-field-soil-work.jpg",
+    tag: { fr: "Travaux Pratiques", en: "Hands-On Fieldwork" },
+    title: {
+      fr: "Implantation et travaux de terrain",
+      en: "Field setup & practical farm work",
+    },
+    caption: {
+      fr: "Démonstration technique et appui direct lors de la mise en place des parcelles.",
+      en: "Hands-on technical demonstration and support during plot establishment.",
+    },
+  },
+];

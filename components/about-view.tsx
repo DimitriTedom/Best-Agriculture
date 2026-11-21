@@ -7,7 +7,7 @@ import { ArrowRight, Award, Building2, Leaf, MapPin, ShieldCheck, Sprout } from 
 import { useLanguage } from "@/components/language-provider";
 import { BlurFade } from "@/components/ui/blur-fade";
 import { Button } from "@/components/ui/button";
-import { COMPANY_INFO } from "@/lib/content";
+import { COMPANY_INFO, FIELD_GALLERY } from "@/lib/content";
 
 export function AboutView() {
   const { locale } = useLanguage();
@@ -77,11 +77,11 @@ export function AboutView() {
         <div className="grid items-center gap-12 lg:grid-cols-12">
           <div className="relative aspect-[4/3] overflow-hidden rounded-3xl border border-border shadow-xl lg:col-span-6">
             <Image
-              src="/images/agronomy-advisory.jpg"
-              alt="Équipe agronomique Best Agriculture sur le terrain dans l'Ouest Cameroun"
+              src="/images/team-field-brigade.jpg"
+              alt="Brigade terrain de Best Agriculture dans la Menoua, Ouest Cameroun"
               fill
               sizes="(max-width: 1024px) 100vw, 50vw"
-              className="object-cover"
+              className="object-cover object-top"
             />
           </div>
 
@@ -120,6 +120,48 @@ export function AboutView() {
               </BlurFade>
             );
           })}
+        </div>
+
+        {/* Field Operations Gallery */}
+        <div className="mt-20">
+          <div className="max-w-2xl space-y-2">
+            <p className="text-xs font-bold uppercase tracking-[0.2em] text-forest-700">
+              {locale === "fr" ? "Réalisations & Terrain" : "Field Operations"}
+            </p>
+            <h2 className="font-serif text-3xl font-bold text-foreground">
+              {locale === "fr"
+                ? "Au plus près des cultures et des producteurs"
+                : "Working directly alongside crops and growers"}
+            </h2>
+          </div>
+          <div className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+            {FIELD_GALLERY.filter((item) => item.id !== "brigade")
+              .slice(0, 4)
+              .map((item) => (
+                <figure
+                  key={item.id}
+                  className="overflow-hidden rounded-2xl border border-border bg-card shadow-sm"
+                >
+                  <div className="relative aspect-[4/3] w-full overflow-hidden bg-forest-100">
+                    <Image
+                      src={item.image}
+                      alt={item.title[locale]}
+                      fill
+                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                      className="object-cover"
+                    />
+                  </div>
+                  <figcaption className="p-4">
+                    <p className="text-[11px] font-semibold uppercase tracking-wider text-forest-700">
+                      {item.tag[locale]}
+                    </p>
+                    <p className="mt-1 font-serif text-sm font-bold text-foreground">
+                      {item.title[locale]}
+                    </p>
+                  </figcaption>
+                </figure>
+              ))}
+          </div>
         </div>
 
         {/* Locations & Official Credentials */}
