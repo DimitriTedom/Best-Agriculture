@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { COMPANY_INFO } from "@/lib/content";
 
 export const SITE_URL = (
-  process.env.NEXT_PUBLIC_SITE_URL || "https://best-agriculture.vercel.app"
+  process.env.NEXT_PUBLIC_SITE_URL || "https://best-agriculture.com"
 ).replace(/\/$/, "");
 
 export const DEFAULT_OG_IMAGE = "/images/hero-highlands.jpg";

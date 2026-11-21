@@ -7,7 +7,7 @@ export const COMPANY_INFO = {
   phoneDisplay: "+237 650 66 53 83",
   phoneRaw: "+237650665383",
   whatsappNumber: "237650665383",
-  email: "bestagriculture6@gmail.com",
+  email: "contact@best-agriculture.com",
   hqAddressFr: "Dschang Foreke, Département de la Menoua, Région de l'Ouest, Cameroun",
   hqAddressEn: "Dschang Foreke, Menoua Division, West Region, Cameroon",
   farmSiteFr: "Site de production agro-pastorale : Kassalafam, Santchou (Menoua)",
