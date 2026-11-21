@@ -13,9 +13,9 @@ export default function manifest(): MetadataRoute.Manifest {
     lang: "fr",
     icons: [
       {
-        src: "/icon.svg",
-        sizes: "any",
-        type: "image/svg+xml",
+        src: "/images/logo-best-agriculture.png",
+        sizes: "222x252",
+        type: "image/png",
       },
     ],
   };

@@ -11,7 +11,7 @@ export function StructuredData() {
       "Entreprise agricole agréée à Dschang Foreke et Santchou (Menoua, Ouest Cameroun) : productions agricoles, conseils agronomiques, accompagnement et suivi des producteurs, vente de produits phytosanitaires et intrants agricoles.",
     url: SITE_URL,
     image: `${SITE_URL}${DEFAULT_OG_IMAGE}`,
-    logo: `${SITE_URL}/icon.svg`,
+    logo: `${SITE_URL}/images/logo-best-agriculture.png`,
     telephone: COMPANY_INFO.phoneRaw,
     email: COMPANY_INFO.email,
     taxID: COMPANY_INFO.taxId,
